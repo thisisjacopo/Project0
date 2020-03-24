@@ -26,6 +26,7 @@ const indexRouter = require('./routes/index');
 const userRouter = require('./routes/user');
 const authRoutes = require('./routes/auth');
 const membersRoutes = require('./routes/members');
+const eventsRoutes = require('./routes/events');
 const app = express();
 
 //Views Engine Setups
@@ -68,6 +69,7 @@ app.use('/', indexRouter);
 app.use('/users', userRouter);
 app.use('/auth', authRoutes);
 app.use('/members', membersRoutes);
+app.use('/events', eventsRoutes);
 
 
 // catches 404 and forward to error handler

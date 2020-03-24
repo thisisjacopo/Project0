@@ -23,9 +23,9 @@ router.get('/comunity', (req, res, next) => {
   });
 });
 
-// //SENDS YOU TO NEW EVENT FROM PROFILE PAGE
-// //SENDS TO NEW EVENT PAGE
-router.get('/events/new-event', (req, res, next) => {
+// // //SENDS YOU TO NEW EVENT FROM PROFILE PAGE
+// // //SENDS TO NEW EVENT PAGE
+router.get('/events', (req, res, next) => {
   res.render('events/new-event');
 });
 

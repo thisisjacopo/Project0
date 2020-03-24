@@ -1,1 +1,11 @@
-<h1>Hello Goodlooking</h1>
+<h1>Project 0 Events:</h1>
+
+<ul>
+    {{#each events}}
+    <li>
+        <h5>{{this.title}}</h5>
+        <h6>{{this.city}}</h6>
+        <p>{{this.date}} {{this.time}}</p>
+    </li>
+    {{/each}}
+</ul>
