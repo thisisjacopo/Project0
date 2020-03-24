@@ -18,13 +18,13 @@ res.render('events/new-event');
 
 router.post('/members/events/new-event', (req, res, next) => {
     const { title, location, date, time } = req.body;
-    const newEvent = new Event({ title, location, date, time })
+    const newEvent = new Event({ title, location, date, time });
     newEvent.save()
     .then(() => {
-      res.redirect('events/events-all')
+      res.redirect('events/events-all');
     })
     .catch((error) => {
-      console.log('Error while adding event', error)
+      console.log('Error while adding event', error);
     });
   });
 
