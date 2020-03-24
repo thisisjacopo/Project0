@@ -8,6 +8,8 @@ const eventSchema = new Schema ({
     time: String,
 });
 
+eventSchema.set('timestamps', true);
+
 const Event = mongoose.model('Event', eventSchema);
 module.exports = Event;
 

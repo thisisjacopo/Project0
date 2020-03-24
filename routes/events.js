@@ -1,12 +1,18 @@
-const mongoose = require("mongoose");
 const express  = require('express');
+const Event = require('../models/event');
 const router = express.Router();
-const User = require('../models/user');
-const Event = require('../models/Event');
 
+//CHECK IF USER IS LOGGED IN, IF NOT RENDERS TO LOGIN PAGE
 
-// SENDS YOU TO NEW EVENT FROM PROFILE PAGE
-// SENDS TO NEW EVENT PAGE
+router.use((req, res, next) => {
+  if (req.session.currentUser) {
+    next();
+    return;
+  }
+  res.redirect('/auth/login');
+});
+
+// SENDS YOU TO NEW EVENT FROM PROFILE PAGE AND FROM 'As'
 router.get('/new-event', (req, res, next) => {
     res.render('events/new-event');
 });
@@ -31,7 +37,7 @@ router.post('/new-event', (req, res, next) => {
 
 
 //RENDERS ALL EVENTS ON EVENTS-ALL PAGE
-router.get('/', (req, res, next) => {
+router.get('/events-all', (req, res, next) => {
     Event.find()
     .then(events => {
         res.render('events/events-all', {events: events});
