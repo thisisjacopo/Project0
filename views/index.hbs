@@ -1,0 +1,27 @@
+
+    {{#if isUserLoggedIn}}
+<header class="landing-bio">
+   <h1>Project 0</h1>
+   <h4>Connect,  Save,  Repeat.</h4>
+   <hr>
+<div class="user-welcome">
+  <h4> Hello {{ currentUserInfo.firstName }} </h4>
+  <hr>
+<ul>
+  <li> <a href="/members/comunity"> Connect with other members </a> </li>
+  <li> <a href="#"> Organize a meetup </a> </li>
+  <li> <a href="#"> Check all the schedule events worldwide </a> </li>
+  <li> <a href="/auth/logout"> Log out </a> </li>
+</ul>
+</div>
+    {{else}}
+<header class="landing-bio">
+<h1>Project 0</h1>
+<hr>
+<h4>Connect,  Save,  Repeat.</h4>
+<p>Project 0 aims to connect ocean preservation activists and to diffuse the importance of cleaning up our waters.</p>
+<button><a href="/auth/signup"> Become a Member </a></button>
+</header>
+    {{/if}}
+  </ul>
+</nav>

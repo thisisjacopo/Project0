@@ -1,0 +1,364 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  @font-face {
+    font-family: 'Roboto', sans-serif;
+      src: url(/fonts/Roboto-Medium);
+  }
+
+  body{
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 100%;
+    color: cornsilk;
+    background-color: rgb(18,62,107);
+  }
+
+
+nav{
+    min-height: 12vh;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 2px;
+}
+
+
+nav a img{
+   margin-top: auto;
+   max-width: 30%;
+   height: auto;
+}
+
+.landing-bio{
+    padding: 20px 2px;
+    margin-top: 20vh;
+    text-decoration: none;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.landing-bio h1{
+  margin-bottom: 2vh;
+  font-size: 40px;
+}
+
+hr {
+  border-top: 2px solid cornsilk;
+  width: 90%;
+  margin: auto;
+  opacity: 50%;
+
+}
+
+.user-welcome hr{
+  border-top: 1px solid cornsilk;
+  width: 20%;
+  margin-bottom: 1.5vh;
+  opacity: 50%;
+}
+
+.landing-bio h4{
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  font-size: 20px;
+}
+
+.landing-bio p{
+  margin-top: 2vh;
+  font-size: 15px;
+}
+
+button{
+  width: 300px;
+  margin-top: 5vh;
+  background-color: rgb(18,62,107);
+  padding: 3px;
+  border-radius: 10px;
+}
+
+button a{
+  font-size: 15px;
+  color: cornsilk;
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+ul{ 
+    list-style-type: none;
+  }
+
+.nav-links {
+    color: cornsilk;
+    display: flex;
+    list-style: none;
+    width: 50%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  .nav-links li a {
+    color: cornsilk;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .line {
+      width: 35px;
+      height: 2px;
+      background: cornsilk;
+      margin: 5px;
+    }
+    nav {
+      position: relative;
+    }
+  
+    .hamburger {
+      position: absolute;
+      cursor: pointer;
+      right: 5%;
+      top: 50%;
+      transform: translate(-5%, -50%);
+      z-index: 2;
+    }
+  
+    .nav-links {
+      position: fixed;
+      background: rgb(18,62,107);
+      height: 15vh;
+      width: 100%;
+      flex-direction: column;
+      clip-path: circle(100px at 100% -70%);
+      -webkit-clip-path: circle(100px at 100% -70%);
+      transition: all 1s ease-out;
+      pointer-events: none;
+    }
+    .nav-links.open {
+      background-color: rgb(18,62,107);
+      margin-top: 25px;
+      align-items: center;
+      clip-path: circle(500px at 100% -60%);
+      -webkit-clip-path: circle(500px at 100% -60%);
+      pointer-events: all;
+      justify-content: space-around;
+    }
+    .nav-links li {
+      opacity: 0;
+    }
+    .nav-links li a {
+      font-size: 20px;
+    }
+    .nav-links li:nth-child(1) {
+        transition: all 0.5s ease 0.2s;
+      }
+    .nav-links li:nth-child(2) {
+      transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3) {
+      transition: all 0.5s ease 0.6s;
+    }
+    .nav-links li:nth-child(4) {
+        transition: all 0.5s ease 0.8s;
+      }
+
+    li.fade {
+      opacity: 1;
+    }
+  }
+
+  .user-welcome h4{
+    margin-top: 7vh;
+    margin-bottom: 2vh;
+    color: cornsilk;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  .user-welcome li{
+    display: inline;
+    justify-content: space-between;
+    margin: 3vh;
+  }
+
+  .user-welcome a{
+    font-family: 'Roboto', sans-serif;
+    color: cornsilk;
+    justify-content: space-around;
+    font-size: 15px;
+    text-decoration: none;
+    align-items: center;
+    text-align: center;
+  }
+
+  footer{
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    position: absolute;
+    bottom: 0;
+    height: 75px;
+    width: 100%;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 20px 2px;
+  }
+
+  footer a{
+    display: inline;
+    padding-right: 20px;
+    pointer-events: all;
+    color: cornsilk;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+    text-decoration: none;
+  }
+  
+  footer p{
+    margin-top: 3vh;
+    margin-left: 1vh;
+    color: cornsilk;
+    font-size: 12px;
+    text-align: left;
+  }
+
+  .signup-landing{
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: cornsilk;
+    background-color: rgb(18,62,107);
+  }
+
+  .signup-landing h2{
+    margin-top: 4.5vh;
+    margin-bottom: 3.5vh;
+  }
+
+  .signup-form{
+    align-items: center;
+    margin: auto;
+    text-align: center;
+    display: inline-block;
+    clear: both;
+  }
+  .signup-form label{
+    font-size: 20px;
+    margin-bottom: 1.5vh;
+    clear: left;
+    display: grid;
+    flex-direction: row;
+  }
+
+  .signup-form input{
+    background-color: rgb(18,62,107);
+    color: cornsilk;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    outline: 0;
+    border-width: 0 0 1.5px;
+    border-color: rgb(110,212,252);
+    width: 35vh;
+    margin-bottom: 1.0vh;
+    height: 20px;
+    flex: 0 0 200px;
+    margin-left: 10px; 
+    text-align: center;
+  }
+
+  .signup-form button{
+    color: cornsilk;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border-radius: 3px;
+    border-color: cornsilk;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    width: 25vh;
+  }
+
+  .signup-landing a{
+    color: cornsilk;
+  }
+
+  .login-landing{
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: cornsilk;
+    background-color: rgb(18,62,107);
+  }
+
+  .login-landing h2{
+    margin-top: 7.5vh;
+    margin-bottom: 4.5vh;
+  }
+
+  .login-form{
+    align-items: center;
+    margin: auto;
+    text-align: center;
+    display: inline-block;
+    clear: both;
+  }
+
+  .login-form label{
+    font-size: 20px;
+    margin-bottom: 2vh;
+    clear: left;
+    display: grid;
+    flex-direction: row;
+  }
+
+  .login-form input{
+    background-color: rgb(18,62,107);
+    color: cornsilk;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    outline: 0;
+    border-width: 0 0 1.5px;
+    border-color: rgb(110,212,252);
+    width: 35vh;
+    margin-bottom: 1.5vh;
+    height: 20px;
+    flex: 0 0 200px;
+    margin-left: 10px;
+    text-align: center;
+  }
+
+  .login-form button{
+    color: cornsilk;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border-radius: 3px;
+    border-color: cornsilk;
+    margin-top: 2vh;
+    margin-bottom: 2.5vh;
+    width: 25vh;
+  }
+
+  .login-landing a{
+    color: cornsilk;
+  }

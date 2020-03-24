@@ -1,0 +1,30 @@
+<div class="login-landing">
+<h2> Log In </h2>
+
+{{#if errorMessage}}
+  <p class="error-message">
+    {{ errorMessage }}
+  </p>
+{{/if}}
+
+<form action="/auth/login" method="post" class="login-form">
+  <div>
+    <label for="email-input"> Email </label>
+    <input type="email" name="email" id="email-input">
+  </div>
+
+  <div>
+    <label for="password-input"> Password </label>
+    <input type="password" name="password" id="password-input">
+  </div>
+
+  <button> Log In </button>
+</form>
+
+<p>
+  Don't have an account?
+  <a href="/signup">
+    Create an account.
+  </a>
+</p>
+</div>

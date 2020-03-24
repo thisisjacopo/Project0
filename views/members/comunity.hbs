@@ -1,0 +1,11 @@
+<ul>
+    {{#each users}}
+    <li>
+        <h5>{{this.firstName}} {{this.lastName}}</h5>
+        <h6>{{this.city}}</h6>
+    </li>
+    {{/each}}
+</ul>
+<a href="/members/user-profile">
+    Back to your Profile
+</a>

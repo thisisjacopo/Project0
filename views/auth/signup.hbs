@@ -1,0 +1,49 @@
+<div class="signup-landing">
+    <h2> Sign Up </h2>
+
+{{#if errorMessage}}
+<p class="error-message">
+    {{ errorMessage }}
+</p>
+{{/if}}
+
+<form action="/auth/signup" method="POST" class="signup-form">
+    <div>
+        <label for="firstName-input"> Name </label>
+        <input type="text" name="firstName" id="lastName-input" placeholder="">
+    </div>
+
+        <div>
+        <label for="lastName-input"> Last Name </label>
+        <input type="text" name="lastName" id="lastName-input" placeholder="">
+    </div>
+
+    <div>
+        <label for="email-input"> Email </label>
+        <input type="email" name="email" id="email-input" placeholder="">
+    </div>
+
+    <div>
+        <label for="city-input"> City </label>
+        <input type="text" name="city" id="city-input" placeholder="">
+    </div>
+
+    <div>
+        <label for="password-input"> Password </label>
+        <input type="password" name="password" id="password-input" placeholder="">
+    </div>
+
+    <div>
+        <label for="password-input"> Repeat Password </label>
+        <input type="password" name="repeatPassword" id="password-input" placeholder="">
+    </div>
+    <button> Create New Account </button>
+</form>
+
+<p>
+    Already a Member?
+    <a href="/login">
+        Log in.
+    </a>
+</p>
+</div>

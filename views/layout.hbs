@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+    <nav>
+        <a href="/"><img src="/images/wave-logo-png-13.png" alt=""></a>
+    <div class="hamburger">
+        <ul>
+        <li class="line"></li>
+        <li class="line"></li>
+        <li class="line"></li>
+        <li class="line"></li>
+        </ul>
+    </div>
+    <ul class="nav-links">
+        <li><a href="#">Cities</a></li>
+        {{#if isUserLoggedIn}}
+        <li><a href='/members/user-profile'>Profile</a></li>
+        <li><a href="#">About Project 0</a></li>
+        <li><a href="/auth/logout"> Log Out </a></li>
+        {{else}}
+        <li><a href="/auth/signup">Signup</a></li>
+        <li><a href="/auth/login">Login</a></li>
+        <li><a href="#">About Project 0</a></li>
+        {{/if}}
+    </ul>
+    </nav>
+    <main>
+{{{body}}}
+    </main>
+    
+    <footer class="footer-distributed">
+			<div class="footer">
+
+					<a class="link-1" href="/">Home</a>
+
+                    <a href="#">Cities</a>
+
+                    {{#if isUserLoggedIn}}
+                    <a href="#">Profile</a>
+                    <a href="#">About</a>	
+                    <a href="/auth/logout">Log Out</a>
+                    {{else}}
+					<a href="./auth/signup">Signup</a>
+                    <a href="/auth/login">Login</a>
+                    <a href="#">About</a>	
+                    {{/if}}				
+			</div>
+            <div class="company-mark">
+                <p><p>Project0 - est. 2020</p></p>
+            </div>
+		</footer>
+    <script src="/animations/animation.js"></script>
+</body>
+</html>
