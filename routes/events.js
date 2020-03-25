@@ -12,6 +12,14 @@ router.use((req, res, next) => {
   res.redirect('/auth/login');
 });
 
+//RENDERS ALL EVENTS ON EVENTS-ALL PAGE, HAD TO BE PUT ABOVE NEW EVENT OR IT WOULDN´T RENDER LIST
+router.get('/events-all', async (req, res, next) => {
+  const events = await Event.find();
+  res.render('events/events-all', {events});
+  });
+
+
+
 // SENDS YOU TO NEW EVENT FROM PROFILE PAGE AND FROM 'As'
 router.get('/new-event', (req, res, next) => {
     res.render('events/new-event');
@@ -36,16 +44,6 @@ router.post('/new-event', (req, res, next) => {
   });
 
 
-//RENDERS ALL EVENTS ON EVENTS-ALL PAGE
-router.get('/events-all', (req, res, next) => {
-    Event.find()
-    .then(events => {
-        res.render('events/events-all', {events: events});
-    })
-    .catch (error => {
-        console.log('Error while getting the events from DB: ', error);
-    });
-});
 
 //IMPORTANT!
 module.exports = router;

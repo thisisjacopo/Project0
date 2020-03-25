@@ -176,6 +176,12 @@ ul{
     li.fade {
       opacity: 1;
     }
+
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
   }
 
   .user-welcome h4{
@@ -234,7 +240,8 @@ ul{
   
   footer p{
     margin-top: 3vh;
-    margin-left: 1vh;
+    margin-left: 3.5vh;
+    margin-bottom: 0.8vh;
     color: cornsilk;
     font-size: 12px;
     text-align: left;
@@ -362,3 +369,80 @@ ul{
   .login-landing a{
     color: cornsilk;
   }
+
+.user-profile-landing{
+    padding: 20px 2px;
+    margin-top: 20vh;
+    text-decoration: none;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.user-profile-landing h2{
+  color: cornsilk;
+  font-size: 35px;
+}
+
+.user-profile-landing h4{
+  color: cornsilk;
+  font-size: 25px;
+  margin-bottom: 2.5vh;
+  margin-top: 2.5vh;
+}
+
+.user-profile-landing a{
+  color: cornsilk;
+  font-size: 20px;
+  text-decoration: none;
+  justify-content: space-between;
+  margin-left: 1vh;
+}
+
+.user-profile-landing hr{
+  border-top: 1px solid cornsilk;
+  width: 35%;
+  margin-top: 1.5vh;
+  margin-bottom: 1.5vh;
+  opacity: 50%;
+}
+
+.comunity-landing{
+  padding: 20px 2px;
+  margin-top: 20vh;
+  text-decoration: none;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.comunity-landing h2{
+  color: cornsilk;
+  font-size: 35px;
+}
+
+.comunity-landing a{
+  color: cornsilk;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+.row {margin: 0 -5px;}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 cornsilk; /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: rgb(18,62,107);
+  color: cornsilk;
+}

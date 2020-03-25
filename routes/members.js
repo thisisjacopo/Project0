@@ -13,14 +13,12 @@ router.use((req, res, next) => {
   });
 
 //SENDS TO COMUNITY PAGE, RENDERS ALL MEMBERS
-router.get('/comunity', (req, res, next) => {
-  User.find()
-  .then(users => {
-      res.render('members/comunity', {users: users});
-  })
-  .catch (error => {
-      console.log('Error while getting the users from DB: ', error);
-  });
+router.get('/comunity', async (req, res, next) => {
+  const users = await User.find();
+      res.render('members/comunity', {users});
+  // .catch (error => {
+  //     console.log('Error while getting the users from DB: ', error);
+  // });
 });
 
 // // //SENDS YOU TO NEW EVENT FROM PROFILE PAGE
