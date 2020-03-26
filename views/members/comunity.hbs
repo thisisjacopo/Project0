@@ -1,16 +1,8 @@
 <div class="comunity-landing">
     <h2>Discover users within our comunity:</h2>
-<div class="row">
-  <div class="column">
-    {{#each users}}
-    <div class="card">
-        <h5>{{firstName}} {{lastName}}</h5>
-        <h6>{{city}}</h6>
-    </div>
-    {{/each}}
-  </div>
-</div>
-<a href="/members/user-profile">
-    Back to your Profile
-</a>
+
+        {{#each users}}
+        {{> membersCard}}
+        {{/each}}
+
 </div>

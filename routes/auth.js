@@ -5,6 +5,8 @@ const router = express.Router();
 const bcryptSalt = 10;
 
 
+
+
 //SIGNUP VALIDATIONS 
 
 router.get('/signup', (req, res, next) => {

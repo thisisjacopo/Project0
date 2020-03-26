@@ -12,7 +12,9 @@ router.use((req, res, next) => {
     res.redirect('/auth/login');
   });
 
+
 //SENDS TO COMUNITY PAGE, RENDERS ALL MEMBERS
+
 router.get('/comunity', async (req, res, next) => {
   const users = await User.find();
       res.render('members/comunity', {users});
@@ -21,8 +23,10 @@ router.get('/comunity', async (req, res, next) => {
   // });
 });
 
+
 // // //SENDS YOU TO NEW EVENT FROM PROFILE PAGE
 // // //SENDS TO NEW EVENT PAGE
+
 router.get('/events', (req, res, next) => {
   res.render('events/new-event');
 });
