@@ -1,7 +1,9 @@
-<h2>{{currentUserInfo.firstName}},Create a new event below:</h2>
+<div class="newevent-landing">
+
+<h2>{{currentUserInfo.firstName}}, Create a new event below:</h2>
 
 <form method="POST">
-    <div class="form-group">
+    <div class="newevent-form">
         <label for="nameOfEvent">Event Title</label>
         <input type="text" id="title" name="title" class="form-control">
         <label for="locationOfEvent">Location of the event</label>
@@ -14,3 +16,5 @@
         <button type="submit"> Create New Event </button>
     </div>
 </form>
+
+</div>

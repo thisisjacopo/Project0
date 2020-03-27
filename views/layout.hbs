@@ -21,15 +21,15 @@
     <ul class="nav-links">
         {{#if isUserLoggedIn}}
         <li>Hello {{ currentUserInfo.firstName }}</li>
-        <li><a href="#">Cities</a></li>
+        <li><a href="/cities">Cities</a></li>
         <li><a href='/members/user-profile'>Profile</a></li>
-        <li><a href="#">About Project 0</a></li>
+        <li><a href="/about">About Project 0</a></li>
         <li><a href="/auth/logout"> Log Out </a></li>
         {{else}}
-        <li><a href="#">Cities</a></li>
+        <li><a href="/cities">Cities</a></li>
         <li><a href="/auth/signup">Signup</a></li>
         <li><a href="/auth/login">Login</a></li>
-        <li><a href="#">About Project 0</a></li>
+        <li><a href="/about">About Project 0</a></li>
         {{/if}}
     </ul>
     </nav>
@@ -42,7 +42,21 @@
 <div id="container">
 <div id="cont">
 <div class="footer_center">
-	   <h3>Classy footer text</h3>
+	   <h4>Project 0</h4>
+        {{#if isUserLoggedIn}}
+                    <a class="" href="/">Home</a>
+                    <a href="/members/user-profile">Profile</a>
+                    <a href="/cities">Cities</a>
+                    <a href="/about">About</a>   
+                    <a href="/auth/logout">Log Out</a>
+        {{else}}
+                    <a class="" href="/">Home</a>
+                    <a href="/cities">Cities</a>
+                    <a href="./auth/signup">Signup</a>
+                    <a href="/auth/login">Login</a>
+                    <a href="/about">About</a>   
+        {{/if}}             
+
 </div>
 </div>
 </div>

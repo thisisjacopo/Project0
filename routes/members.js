@@ -24,6 +24,15 @@ router.get('/comunity', async (req, res, next) => {
 });
 
 
+//RENDERS MEMBERS CITIES TO CITIES
+router.get('/cities', async (req, res, next) => {
+  const users = await User.find();
+      res.render('cities', {users});
+  // .catch (error => {
+  //     console.log('Error while getting the users from DB: ', error);
+  // });
+});
+
 // // //SENDS YOU TO NEW EVENT FROM PROFILE PAGE
 // // //SENDS TO NEW EVENT PAGE
 
