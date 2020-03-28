@@ -15,6 +15,7 @@
   "author": "jacopo rodighiero",
   "license": "ISC",
   "dependencies": {
+    "@fooloomanzoo/datetime-input": "^3.0.4",
     "body-parser": "^1.19.0",
     "connect-mongo": "^3.2.0",
     "cookie-parser": "^1.4.5",

@@ -9,10 +9,11 @@
         <label for="locationOfEvent">Location of the event</label>
         <input type="text" id="location" name="location" class="form-control">
         <label for="dateOfEvent">Date of the event</label>
-        <input type="date" id="date" name="date" class="form-control" min="2020-01-01" max="2050-12-31">
+        <input type="date" name="date" data-date-format="DD/MM/YYYY"/>        
         <label for="timeOfEvent">Starting time of the event</label>
         <input type="time" id="time" name="time" class="form-control" min="06:00" max="24:00">
         <small>Events can be scheduled between 6AM and 12AM</small>
+        <input type="text" name="host" id="host" class="forn-control" value="{{currentUserInfo.firstName}} {{currentUserInfo.lastName}}}">
         <button type="submit"> Create New Event </button>
     </div>
 </form>

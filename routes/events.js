@@ -45,5 +45,37 @@ router.post('/new-event', (req, res, next) => {
 
 
 
+//ID ROUTES START HERE
+
+//DELETE EVENT
+router.post('/:id/delete', (req, res, next) => {
+  Event.findByIdAndRemove(req.params.id)
+  .then(() => {res.redirect('/events/events-all')})
+  .catch(e => next(e))
+});
+router.get('/:id', (req, res, next) => {
+  Event.findById(req.params.id)
+  .then((event) => {
+      res.render('events/events-all', event);
+  })
+  .catch (error => {
+      console.log('Error while getting the event from DB: ', error);
+  });
+});
+
+
+//EDIT EVENT
+
+router.get('/:id/edit' , async (req, res, next) => {
+  const editEvent = await Event.findById(req.params.id)
+  res.render('events/edit', editEvent);
+});
+
+router.post('/:id/edit', async (req, res, next) => {
+  const { title, location, date, time } = req.body;
+  await Event.update({_id: req.body.id}, { $set: {title, location, date, time}})
+  res.redirect('/events/events-all');
+});
+
 //IMPORTANT!
 module.exports = router;

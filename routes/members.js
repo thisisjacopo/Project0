@@ -12,22 +12,22 @@ router.use((req, res, next) => {
     res.redirect('/auth/login');
   });
 
-
-//SENDS TO COMUNITY PAGE, RENDERS ALL MEMBERS
-
-router.get('/comunity', async (req, res, next) => {
+  //RENDERS MEMBERS CITIES TO CITIES
+router.get('/', async (req, res, next) => {
   const users = await User.find();
-      res.render('members/comunity', {users});
+      res.render('cities', {users});
+
   // .catch (error => {
   //     console.log('Error while getting the users from DB: ', error);
   // });
 });
 
 
-//RENDERS MEMBERS CITIES TO CITIES
-router.get('/cities', async (req, res, next) => {
+//SENDS TO COMUNITY PAGE, RENDERS ALL MEMBERS
+
+router.get('/comunity', async (req, res, next) => {
   const users = await User.find();
-      res.render('cities', {users});
+      res.render('members/comunity', {users});
   // .catch (error => {
   //     console.log('Error while getting the users from DB: ', error);
   // });

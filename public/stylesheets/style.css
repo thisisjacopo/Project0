@@ -11,6 +11,9 @@
       src: url(/fonts/Roboto-Medium);
   }
 
+  html{
+    scroll-behavior: smooth;
+  }
   body{
     font-family: 'Roboto', sans-serif;
     width: 100%;
@@ -206,7 +209,7 @@ ul{
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 769px) {
     .line {
       width: 35px;
       height: 2px;
@@ -270,8 +273,18 @@ ul{
     }
 
     .cards { 
-      grid-template-columns: repeat(2, 1fr); 
+      grid-template-columns: repeat(3, 1fr); 
+      padding-left: 6%;
+      width: 32%;
+      height: 367px;
     }
+
+
+
+    .card-events h2{
+      font-size: 15px;
+    }
+    
 
   }
 
@@ -310,8 +323,8 @@ ul{
   }
 
   .footer #button{
-    width:35px;
-    height:35px;
+    width:30px;
+    height:30px;
     border: cornsilk 10px solid;
     border-radius:35px;
     margin:0 auto;
@@ -333,6 +346,7 @@ ul{
       transition: all 1s ease;
     position:relative;
   }
+
   .footer {
     bottom:0;
     left:0;
@@ -348,6 +362,7 @@ ul{
       transition: all 1s ease;
     z-index:999;
   }
+
   .footer:hover {
     -webkit-transition: all 1s ease;
       -moz-transition: all 1s ease;
@@ -356,6 +371,7 @@ ul{
       transition: all 1s ease;
     height: 10em;
   }
+
   .footer #container{
     margin-top:5px;
     width:100%;
@@ -365,6 +381,7 @@ ul{
     left:0;
     background: cornsilk;
   }
+
   .footer #cont{
     position:relative;
     top:-45px;
@@ -373,11 +390,13 @@ ul{
     height:auto;
     margin:0 auto;
   }
+
   .footer_center{
     width:500px;
     float:left;
     text-align:center;
   }
+
   .footer h4{
     font-family: 'Roboto', sans-serif;
     font-size: 35px;
@@ -401,6 +420,7 @@ ul{
     justify-content: space-between;
     align-items: center;
   }
+
   .signup-landing{
     font-family: 'Roboto', sans-serif;
     width: 100%;
@@ -422,6 +442,7 @@ ul{
     display: inline-block;
     clear: both;
   }
+
   .signup-form label{
     font-size: 20px;
     margin-bottom: 1.5vh;
@@ -585,14 +606,15 @@ ul{
   max-width: 1200px;
   margin: 0 auto;
   grid-gap: 1rem;
-  width: 28%;
+  width: 30%;
   margin: 19px;
-  padding-left: 10%;
+  padding-left: 7%;
   margin-top: 15px;
+  align-items: center;
 }
 
 .card {
-  background: rgb(18,62,107)d;
+  background: rgb(18,62,107);
   border: 1px solid cornsilk;
   border-radius: 5px;
   display: flex;
@@ -618,6 +640,42 @@ ul{
     text-align: left;
   }
 
+.card-events{
+  border-radius: 5px;
+  border: 1px solid cornsilk;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+}
+
+.card-events h3{
+  color: cornsilk;
+  font-weight: bold;
+  margin: 1rem 0 .5rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.card-events h5{
+  color: cornsilk;
+  font-weight: bold;
+  margin: 1rem 0 .5rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.card-events h6{
+  color: cornsilk;
+  font-weight: bold;
+  margin: 2rem 0 .5rem;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
   .cards img{
       display: block;
         border: 0;
@@ -627,7 +685,7 @@ ul{
   
   .thumbnail img {
     height: 135px;
-    padding: 1.5rem;
+    padding: 1rem;
   }
   
 .cards p{
@@ -646,8 +704,9 @@ ul{
 
 .events-all-landing h2{
   color: cornsilk;
-  font-size: 30px;
-  margin-bottom: 2vh;
+  font-size: 40px;
+  margin-bottom: 4vh;
+  text-align: center;
 }
 
 .newevent-landing{
@@ -709,4 +768,14 @@ ul{
   margin-top: 2vh;
   margin-bottom: 2vh;
   width: 25vh;
+}
+
+.card-events button{
+  width: 75%;
+  text-align: center;
+  color: cornsilk;
+  background-color: rgb(18,62,107);
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 0.8rem;
 }

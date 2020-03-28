@@ -1,0 +1,18 @@
+<div class="edit-landing">
+<h2>Edit Event</h2>
+<form action="/events/{{_id}}/edit" method="POST">
+    <div class="form-group">
+        <label for="nameOfEvent">Event Title</label>
+        <input type="text" id="title" name="title" class="form-control" value="{{title}}">
+        <label for="locationOfEvent">Location of the event</label>
+        <input type="text" id="location" name="location" class="form-control" value="{{location}}">
+        <label for="dateOfEvent">Date of the event</label>
+        <input type="date" name="date" data-date-format="DD/MM/YYYY" value="{{date}}"/>        
+        <label for="timeOfEvent">Starting time of the event</label>
+        <input type="time" id="time" name="time" class="form-control" value='{{time}}' min="06:00" max="24:00">
+        <small>Events can be scheduled between 6AM and 12AM</small>
+         <input type="hidden" name="id" value="{{_id}}">
+        <button type="submit" class="btn btn-primary"> Confirm changes </button>
+    </div>
+</form>
+</div>

@@ -1,11 +1,18 @@
+
 <section class="cards">
   <article class="card-events">
-    <picture class="thumbnail">
+      <h3>{{location}}</h3>
+          <picture class="thumbnail">
          <img class="category__01" src="/images/citydefult.jpeg" alt="" />
     </picture>
-      <h2>{{location}}</h2>
-      <h5>{{date}}</h5>
-      <p>{{time}}</p>
-   </div>
+      <h5>{{title}}</h5>
+      <h6>{{date}}</h6>
+      <p>Starting time: {{time}}</p>
+      <a href="/events/{{id}}/edit">
+          <button type="submit" class="btn btn-danger">Edit</button>
+      </a> 
+        <form method="POST" action="/events/{{id}}/delete">
+          <button type="submit" class="btn btn-danger">Delete</button> 
+        </form>
   </article>
 </section>
