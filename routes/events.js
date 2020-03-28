@@ -1,5 +1,6 @@
 const express  = require('express');
 const Event = require('../models/event');
+const User = require('../models/user');
 const router = express.Router();
 
 //CHECK IF USER IS LOGGED IN, IF NOT RENDERS TO LOGIN PAGE
@@ -25,33 +26,33 @@ router.get('/new-event', (req, res, next) => {
     res.render('events/new-event');
 });
 
-
 //CREATES NEW EVENT AND REDIRECT USER TO EVENTS-ALL PAGE
 router.get('/events-all', (req, res, next) => {
-res.render('events/events-all');
-});
-
-router.post('/new-event', (req, res, next) => {
-    const { title, location, date, time } = req.body;
-    const newEvent = new Event({ title, location, date, time });
-    newEvent.save()
-    .then(() => {
-      res.redirect('events-all');
-    })
-    .catch((error) => {
-      console.log('Error while adding event', error);
-    });
+  res.render('events/events-all');
   });
+  
+  router.post('/new-event', (req, res, next) => {
+      const { title, location, date, time } = req.body;
+      const host = currentUser._id;
+      const newEvent = new Event({ title, location, date, time, host });
+      newEvent.save()
+      .then(() => {
+        res.redirect('events-all');
+      })
+      .catch((error) => {
+        console.log('Error while adding event', error);
+      });
+    });
 
 
 
-//ID ROUTES START HERE
+//ID ROUTES START HERE  
 
 //DELETE EVENT
 router.post('/:id/delete', (req, res, next) => {
   Event.findByIdAndRemove(req.params.id)
   .then(() => {res.redirect('/events/events-all')})
-  .catch(e => next(e))
+  .catch(e => next(e));
 });
 router.get('/:id', (req, res, next) => {
   Event.findById(req.params.id)

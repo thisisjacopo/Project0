@@ -12,16 +12,6 @@ router.use((req, res, next) => {
     res.redirect('/auth/login');
   });
 
-  //RENDERS MEMBERS CITIES TO CITIES
-router.get('/', async (req, res, next) => {
-  const users = await User.find();
-      res.render('cities', {users});
-
-  // .catch (error => {
-  //     console.log('Error while getting the users from DB: ', error);
-  // });
-});
-
 
 //SENDS TO COMUNITY PAGE, RENDERS ALL MEMBERS
 

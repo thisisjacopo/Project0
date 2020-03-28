@@ -1,4 +1,5 @@
 
+{{#if currentUser._id === host}}
 <section class="cards">
   <article class="card-events">
       <h3>{{location}}</h3>
@@ -16,3 +17,17 @@
         </form>
   </article>
 </section>
+{{else}}
+<section class="cards">
+  <article class="card-events">
+      <h3>{{location}}</h3>
+          <picture class="thumbnail">
+         <img class="category__01" src="/images/citydefult.jpeg" alt="" />
+    </picture>
+      <h5>{{title}}</h5>
+      <h6>{{date}}</h6>
+      <p>Starting time: {{time}}</p>
+        </form>
+  </article>
+</section>
+{{/if}}

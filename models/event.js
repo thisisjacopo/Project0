@@ -6,6 +6,7 @@ const eventSchema = new Schema ({
     location: String,
     date: String,
     time: String,
+    host: String,
 });
 
 eventSchema.set('timestamps', true);
