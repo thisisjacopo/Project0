@@ -3,6 +3,7 @@ const Event = require('../models/event');
 const User = require('../models/user');
 const router = express.Router();
 
+
 //CHECK IF USER IS LOGGED IN, IF NOT RENDERS TO LOGIN PAGE
 
 router.use((req, res, next) => {
@@ -32,8 +33,8 @@ router.get('/events-all', (req, res, next) => {
   });
   
   router.post('/new-event', (req, res, next) => {
+      const host = req.session.currentUser._id;
       const { title, location, date, time } = req.body;
-      const host = currentUser._id;
       const newEvent = new Event({ title, location, date, time, host });
       newEvent.save()
       .then(() => {
