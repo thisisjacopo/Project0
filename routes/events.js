@@ -28,12 +28,14 @@ router.get("/new-event", (req, res, next) => {
 
 //CREATES NEW EVENT AND REDIRECT USER TO EVENTS-ALL PAGE
 
+
 router.get("/events-all", (req, res, next) => {
-  if (req.session.currentUser) {
-    req.session.currentUser._id = Event.host;
-    res.locals.isUserHost = true;
-  } else {
+  if (isUserHost) {
+    req.session.currentUser._id != Event.host;
     res.locals.isUserHost = false;
+  } else {
+    req.session.currentUser._id === Event.host;
+    res.locals.isUserHost = true;
   }
   
   res.render("events/events-all");
