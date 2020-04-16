@@ -1,11 +1,19 @@
 <div class="user-profile-landing">
-<h2>Welcome Back {{currentUserInfo.firstName}}</h2>
+    <h2>Welcome Back {{currentUserInfo.firstName}}</h2>
 
-<hr>
+    <hr>
 
-<h4>What to do next?</h4>
+    <h4>What to do next?</h4>
 
-<a href="/events/new-event"> Create a new event </a>
-<a href="/members/comunity"> Connect to our comunity </a>
-<a href="/events/events-all"> Check out events </a>
+    <a href="/events/new-event"> Create a new event </a>
+    <a href="/members/comunity"> Connect to our comunity </a>
+    <a href="/events/events-all"> Check out events </a>
 </div>
+<h2>Your Events:</h2>
+
+
+{{#each events}}
+
+{{> eventsCard}}
+
+{{/each}}

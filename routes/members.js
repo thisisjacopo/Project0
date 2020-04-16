@@ -16,12 +16,13 @@ router.use((req, res, next) => {
 //SENDS TO COMUNITY PAGE, RENDERS ALL MEMBERS
 
 router.get('/comunity', async (req, res, next) => {
-  const users = await User.find();
-      res.render('members/comunity', {users});
-  // .catch (error => {
-  //     console.log('Error while getting the users from DB: ', error);
-  // });
-});
+  try{
+    const users = await User.find();
+    res.render('members/comunity', {users});
+  }catch { (error) => {
+      console.log('Error while getting the users from DB: ', error);
+  }
+}});
 
 // // //SENDS YOU TO NEW EVENT FROM PROFILE PAGE
 // // //SENDS TO NEW EVENT PAGE
@@ -42,7 +43,6 @@ router.get('/events', (req, res, next) => {
           next(err);
           return;
         }
-    
         res.render('members/user-profile', {
           theUser: theUser
         });

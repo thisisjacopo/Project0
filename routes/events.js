@@ -2,7 +2,7 @@ const express = require("express");
 const Event = require("../models/event");
 const User = require("../models/user");
 const router = express.Router();
-const Handlebars = require('hbs')
+const Handlebars = require("hbs");
 
 //CHECK IF USER IS LOGGED IN, IF NOT RENDERS TO LOGIN PAGE
 
@@ -28,17 +28,24 @@ router.get("/new-event", (req, res, next) => {
 
 //CREATES NEW EVENT AND REDIRECT USER TO EVENTS-ALL PAGE
 
+router.get("/events-all", async (req, res, next) => {
+  try {
+    if (isUserHost) {
+      req.session.currentUser._id != Event.host;
+      res.locals.isUserHost = false;
+      console.log("user aint host");
+    } else {
+      req.session.currentUser._id === Event.host;
+      res.locals.isUserHost = true;
+      console.log("user is host");
+    }
 
-router.get("/events-all", (req, res, next) => {
-  if (isUserHost) {
-    req.session.currentUser._id != Event.host;
-    res.locals.isUserHost = false;
-  } else {
-    req.session.currentUser._id === Event.host;
-    res.locals.isUserHost = true;
+    res.render("events/events-all");
+  } catch {
+    (err) => {
+      console.log("Error while getting the users from DB: ", error);
+    };
   }
-  
-  res.render("events/events-all");
 });
 
 router.post("/new-event", (req, res, next) => {
@@ -50,11 +57,10 @@ router.post("/new-event", (req, res, next) => {
     .then(() => {
       res.redirect("events-all");
     })
-    .catch(error => {
+    .catch((error) => {
       console.log("Error while adding event", error);
     });
 });
-
 
 // Handlebars.registerHelper('isdefined', function (host) {
 //   return host !== req.session.currentUser._id;
@@ -75,14 +81,14 @@ router.post("/:id/delete", (req, res, next) => {
     .then(() => {
       res.redirect("/events/events-all");
     })
-    .catch(e => next(e));
+    .catch((e) => next(e));
 });
 router.get("/:id", (req, res, next) => {
   Event.findById(req.params.id)
-    .then(event => {
+    .then((event) => {
       res.render("events/events-all", event);
     })
-    .catch(error => {
+    .catch((error) => {
       console.log("Error while getting the event from DB: ", error);
     });
 });

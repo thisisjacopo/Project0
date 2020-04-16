@@ -30,7 +30,7 @@
     "http-errors": "^1.7.3",
     "mongoose": "^5.9.5",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.2",
+    "nodemon": "^2.0.3",
     "serve-favicon": "^2.5.0",
     "session": "^0.1.0"
   }
